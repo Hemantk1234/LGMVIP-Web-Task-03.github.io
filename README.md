@@ -21,10 +21,11 @@ It is built using:-
 <hr/>
 
 ## ✌️ Screens Available :-
+
 ### 🧑‍💻 Desktop Version
 ### 📲 Mobile / Tab Version 
 <div align="center">
-    <img src="" width="400px"</img>
+    <img src="https://github.com/Hemantk1234/LGMVIP-Web-Task-03.github.io/assets/125623888/a3a158e6-934c-475c-929f-086196866fb3" width="400px"</img>
 </div>
 <br/>
 <hr/>
