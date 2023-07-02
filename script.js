@@ -1,9 +1,10 @@
 var form = document.querySelector("#userForm");
 const allUsersData = [];
 
-// ------------------function to reset the form------------------
+// Function to reset the form
 const resetForm = function () {
   form.classList.remove("was-validated");
+  // Reset input values
   const name = document.getElementById("name");
   name.value = "";
 
@@ -16,20 +17,22 @@ const resetForm = function () {
   const image = document.getElementById("image");
   image.value = "";
 
+  // Reset gender radio buttons
   const genderEl = document.querySelectorAll('input[name="gender"]');
   for (const rb of genderEl) {
     rb.checked = false;
   }
 
+  // Reset skill checkboxes
   const skillEl = document.querySelectorAll('input[name="skill"]');
   for (const rb of skillEl) {
     rb.checked = false;
   }
 };
 
-// --------------------function to get the data of the form----------------------
-
+// Function to get the data from the form
 const getData = function () {
+  // Get input values
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const website = document.getElementById("website").value;
@@ -37,6 +40,7 @@ const getData = function () {
   let gender;
   let skills = [];
 
+  // Get selected gender
   const genderEl = document.querySelectorAll('input[name="gender"]');
   for (const rb of genderEl) {
     if (rb.checked) {
@@ -45,6 +49,7 @@ const getData = function () {
     }
   }
 
+  // Get selected skills
   const skillEl = document.querySelectorAll('input[name="skill"]');
   for (const rb of skillEl) {
     if (rb.checked) {
@@ -54,14 +59,16 @@ const getData = function () {
   return { name, email, website, image, gender, skills };
 };
 
-//-----------------------adding event listner to the "enroll student" button with type submit to submit the form
-
+// Event listener for the form submission
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   if (form.checkValidity()) {
+    // Get form data and add it to allUsersData array
     const data = getData();
     allUsersData.push(data);
+    // Print the result
     printResult(data);
+    // Reset the form
     resetForm();
   } else {
     form.classList.add("was-validated");
@@ -69,8 +76,7 @@ form.addEventListener("submit", function (event) {
   removeSpan();
 });
 
-// --------------function to remove the span tag ("fill the form to enroll the students")
-
+// Function to remove the span tag ("fill the form to enroll the students")
 function removeSpan() {
   var span = document.getElementById("span");
   if (span) {
@@ -78,12 +84,12 @@ function removeSpan() {
   }
 }
 
-// ------------------function to print the form data in the right side of div by genrating html elments inside the div.
-
+// Function to print the form data in the right side of div by generating HTML elements inside the div
 function printResult(data) {
   const resultEl = document.getElementById("enrolled-students");
   let sectionHeading = null;
   if (allUsersData.length == 1) {
+    // Create section heading for the first user
     sectionHeading = document.createElement("div");
     const description = document.createElement("p");
     description.innerHTML = "Description";
@@ -97,12 +103,12 @@ function printResult(data) {
     sectionHeading.append(description, image);
   }
 
+  // Create wrapper div for user data
   const wrapper = document.createElement("div");
   wrapper.className = "wrapper";
   wrapper.addEventListener("click", function (e) {
-    console.log(e.target.className);
     if (e.target.className.includes("userDeleteBtn")) {
-      console.log("aaadfasdfasdf");
+      // Remove the user data when delete button is clicked
       e.currentTarget.remove();
     }
   });
@@ -121,6 +127,7 @@ function printResult(data) {
   imageHyperlink.href = data.image;
   imageHyperlink.target = "_blank";
 
+  // Create and populate the user info elements
   let name = document.createElement("p");
   name.className = "infoText userName";
   name.innerHTML = data.name;
@@ -147,12 +154,15 @@ function printResult(data) {
   userImage.className = "userImage";
   userImage.src = data.image;
 
+  // Append the user info elements to their respective containers
   textInfoContainer.append(name, gender, email, website, skills);
   imageHyperlink.appendChild(userImage);
   imageContainer.appendChild(imageHyperlink);
 
+  // Append the containers to the wrapper div
   wrapper.append(textInfoContainer, imageContainer, deleteBtn);
 
+  // Append the section heading and wrapper to the result element
   if (sectionHeading == null) {
     resultEl.append(wrapper);
   } else {

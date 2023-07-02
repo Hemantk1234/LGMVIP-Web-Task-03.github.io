@@ -23,59 +23,79 @@
     </div>
     <div class="students row">
         <div class="enroll-student col-md">
+            <!-- Student Registration Form -->
             <form action="" id="userForm" class="main-form form-check needs-validation" novalidate>
-                <div class="form-group row"><label for="name" class="col-sm-2 col-form-label">Name</label>
-                    <div class="col-sm-10"><input class="form-control" minlength="4" id="name" required />
+                <!-- Name Field -->
+                <div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" minlength="4" id="name" required />
                         <div class="invalid-feedback">*Please Enter Your Name.</div>
                     </div>
                 </div>
-                <div class="form-group row"><label for="email" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10"><input type="email" class="form-control" id="email" required />
+                <!-- Email Field -->
+                <div class="form-group row">
+                    <label for="email" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="email" required />
                         <div class="invalid-feedback">*Please Enter a Valid Email Address.</div>
                     </div>
                 </div>
-                <div class="form-group row"><label for="website" class="col-sm-2 col-form-label">Website</label>
-                    <div class="col-sm-10"><input type="url" class="form-control" id="website" required />
+                <!-- Website Field -->
+                <div class="form-group row">
+                    <label for="website" class="col-sm-2 col-form-label">Website</label>
+                    <div class="col-sm-10">
+                        <input type="url" class="form-control" id="website" required />
                         <div class="invalid-feedback">*Please Enter Valid link for your website.</div>
                     </div>
                 </div>
-                <div class="form-group row"><label for="image" class="col-sm-2 col-form-label">Image link</label>
-                    <div class="col-sm-10"><input type="url" class="form-control" id="image" required />
+                <!-- Image Link Field -->
+                <div class="form-group row">
+                    <label for="image" class="col-sm-2 col-form-label">Image link</label>
+                    <div class="col-sm-10">
+                        <input type="url" class="form-control" id="image" required />
                         <div class="invalid-feedback">*Please Enter Valid link for your image.</div>
                     </div>
                 </div>
+                <!-- Gender Field -->
                 <fieldset class="form-group row">
                     <legend class="col-form-label col-sm-2 float-sm-left pt-0">Gender</legend>
                     <div class="col-sm-10">
-                        <div class="form-check"><input class="form-check-input" type="radio" name="gender" id="male"
-                                value="Male" required /> <label class="form-check-label" for="male">Male</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" name="gender" id="female"
-                                value="Female" /> <label class="form-check-label" for="female">Female</label> &nbsp;<div
-                                class="invalid-feedback">*(Please select at least One.)</div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="Male"
+                                required />
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="Female" />
+                            <label class="form-check-label" for="female">Female</label>
+                            <div class="invalid-feedback">*(Please select at least One.)</div>
                         </div>
                     </div>
                 </fieldset>
+                <!-- Skills Field -->
                 <fieldset class="form-group row">
                     <legend class="col-form-label col-sm-2 float-sm-left pt-0">Skills</legend>
                     <div class="col-sm-10">
-                        <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox"
-                                name="skill" id="html" value="HTML" /> <label class="form-check-label"
-                                for="html">HTML</label> &nbsp;<div class="invalid-feedback">*(Please make sure that this
-                                Box is Checked.)</div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="skill" id="html" value="HTML" />
+                            <label class="form-check-label" for="html">HTML</label>
+                            <div class="invalid-feedback">*(Please make sure that this Box is Checked.)</div>
                         </div>
-                        <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox"
-                                name="skill" id="css" value="CSS" /> <label class="form-check-label"
-                                for="css">CSS</label> &nbsp;<div class="invalid-feedback">*(Please make sure that this
-                                Box is Checked.)</div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="skill" id="css" value="CSS" />
+                            <label class="form-check-label" for="css">CSS</label>
+                            <div class="invalid-feedback">*(Please make sure that this Box is Checked.)</div>
                         </div>
-                        <div class="form-check form-check-inline"><input class="form-check-input" type="checkbox"
-                                name="skill" id="java" value="Java" /> <label class="form-check-label"
-                                for="java">Javascript</label> &nbsp;<div class="invalid-feedback">*(Please make sure
-                                that this
-                                Box is Checked.)</div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="skill" id="java" value="Java" />
+                            <label class="form-check-label" for="java">Javascript</label>
+                            <div class="invalid-feedback">*(Please make sure that this Box is Checked.)</div>
                         </div>
                     </div>
-                </fieldset><button type="submit" class="button">Enroll Student</button> &nbsp; &nbsp; &nbsp;
+                </fieldset>
+                <!-- Submit and Cancel Buttons -->
+                <button type="submit" class="button">Enroll Student</button>
                 <button type="reset" class="button">Cancel</button>
             </form>
         </div>
@@ -83,7 +103,8 @@
         <div id="enrolled-students" class="col-md col-12">
             <div class="enroll-heading">
                 <h2>Enrolled Students</h2>
-            </div><span id="span">*Fill the form to Enroll the Students.</span>
+            </div>
+            <span id="span">*Fill the form to Enroll the Students.</span>
         </div>
     </div>
 </body>

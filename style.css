@@ -1,22 +1,18 @@
+/* Reset styles for all elements */
 * {
   margin: 0;
   padding: 0;
 }
 
+/* CSS variables for color values */
 :root {
-  /* color for main nav */
-  --bg-light-green: #000000;
-
-  /* color for (description and image (tittled)) nav. */
-  --bg-green-yellow: #ffffff;
-
-  /* color for border */
-  --b-dark-yellow: #ffffff;
-
-  /* color for new wrapper div */
-  --b-light-yellow: #000000;
+  --bg-light-green: #000000; /* color for main nav */
+  --bg-green-yellow: #ffffff; /* color for (description and image (tittled)) nav. */
+  --b-dark-yellow: #ffffff; /* color for border */
+  --b-light-yellow: #000000; /* color for new wrapper div */
 }
 
+/* Navigation bar styles */
 .nav-bar {
   width: 100%;
   height: 60px;
@@ -35,6 +31,7 @@
   text-align: center;
 }
 
+/* Button styles */
 button {
   align-items: center;
   margin: 350px 600px;
@@ -46,7 +43,6 @@ button {
   padding: 13px 14px 12px 15px;
   background: #d5d5d5;
   border: 0;
-  /* border-radius: 50px; */
   transition: background 0.5s ease-in-out;
 }
 
@@ -63,6 +59,7 @@ button:hover {
     );
 }
 
+/* Main container for student sections */
 .students {
   display: flex;
   gap: 10px;
@@ -71,6 +68,7 @@ button:hover {
   background-color: #ebebeb;
 }
 
+/* Styles for the enroll-student section */
 .enroll-student {
   margin-top: 30px;
   padding-right: 100px;
@@ -79,6 +77,7 @@ button:hover {
   height: auto;
 }
 
+/* Styles for the enrolled-students section */
 #enrolled-students {
   margin-top: 25px;
   margin-bottom: 15px;
@@ -88,6 +87,7 @@ button:hover {
   overflow: scroll;
 }
 
+/* Styles for the enroll-heading section */
 .enroll-heading {
   display: flex;
   justify-content: center;
@@ -95,19 +95,23 @@ button:hover {
   text-align: center;
 }
 
+/* Styles for the gender section */
 .gender {
   padding-left: 15px;
 }
 
+/* Styles for labels */
 .label {
   display: flex;
   font-size: 30px;
 }
 
+/* Styles for form inputs */
 .form-control {
   margin-bottom: 16px;
 }
 
+/* Styles for the separation border */
 .seperation-border {
   box-sizing: border-box;
   box-shadow: 0px 0px 3px 0px var(--bg-light-green);
@@ -116,12 +120,14 @@ button:hover {
   background: var(--bg-light-green);
 }
 
+/* Media query for small screens */
 @media screen and (max-width: 768px) {
   hr.seperation-border {
     height: 0;
   }
 }
 
+/* Styles for section headings */
 .sectionHeading {
   display: flex;
   align-items: center;
@@ -138,6 +144,7 @@ button:hover {
   font-weight: 700;
 }
 
+/* Styles for the description section */
 .description {
   box-sizing: border-box;
   border-right: solid 2px var(--b-dark-yellow);
@@ -145,20 +152,24 @@ button:hover {
   width: 70%;
 }
 
+/* Styles for the image section */
 .Image {
   margin-bottom: 0;
   width: 30%;
 }
 
+/* Styles for the infoText section */
 .infoText {
   margin: 0;
   padding: 0;
 }
 
+/* Styles for the userName class */
 .userName {
   font-weight: bold;
 }
 
+/* Styles for the wrapper section */
 .wrapper {
   box-sizing: border-box;
   display: flex;
@@ -172,6 +183,7 @@ button:hover {
   position: relative;
 }
 
+/* Styles for the userDeleteBtn section */
 .userDeleteBtn {
   position: absolute;
   top: 0px;
@@ -183,23 +195,29 @@ button:hover {
   display: none;
 }
 
+/* Media query for small screens */
 @media screen and (max-width: 768px) {
   button.userDeleteBtn {
     display: block;
   }
 }
 
+/* Show userDeleteBtn on wrapper hover */
 .wrapper:hover .userDeleteBtn {
   display: block;
 }
 
+/* Styles for odd-numbered wrapper sections */
 .wrapper:nth-child(odd) {
   background-color: #ffffff;
 }
+
+/* Styles for even-numbered wrapper sections */
 .wrapper:nth-child(even) {
   background-color: var(--b-light-yellow);
 }
 
+/* Styles for textInfoContainer section */
 .textInfoContainer {
   width: 70%;
   height: 100%;
@@ -208,6 +226,7 @@ button:hover {
   padding: 10px;
 }
 
+/* Styles for imageContainer section */
 .imageContainer {
   width: 30%;
   height: 100%;
@@ -218,11 +237,13 @@ button:hover {
   box-sizing: border-box;
 }
 
+/* Styles for userImage section */
 .userImage {
   height: auto;
   width: 105px;
 }
 
+/* Animation for fade-in effect */
 .fadeIn {
   animation: fadeIn 2s;
 }
